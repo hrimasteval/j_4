@@ -1,5 +1,7 @@
 package org.example;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
@@ -11,10 +13,10 @@ public class Main {
         {
             numbers[i] = scan.nextInt();
         }
-        positive(numbers);
-        negative(numbers);
-        chetni(numbers);
-        nechetni(numbers);
+        checkIfPositive(numbers);
+        checkIfNegative(numbers);
+        checkIfEven(numbers);
+        checkIfOdd(numbers);
         count5(numbers);
 
         // zad 2
@@ -30,67 +32,77 @@ public class Main {
 
         // zad 5
 
+
         // dr zad 1
         int[] num = {1, 4, -5};
         minInt(num);
 
         // dr zad 2
         int number = scan.nextInt();
-        chetnoNechetno(number);
+        evenOrOdd(number);
     }
-    static void positive(int[] numbers)
+
+    static void checkIfPositive(int[] numbers)
     {
-        System.out.println("positive:");
+        System.out.println("Positive:");
         for (int i = 0; i < numbers.length; i++)
         {
             if (numbers[i] > 0)
                 System.out.println(numbers[i]);
         }
+        System.out.println();
     }
-    static void negative (int[] numbers)
+
+    static void checkIfNegative(int[] numbers)
     {
-        System.out.println("negative:");
+        System.out.println("Negative:");
         for (int i = 0; i < numbers.length; i++)
         {
             if (numbers[i] < 0)
                 System.out.println(numbers[i]);
         }
+        System.out.println("");
     }
-    static void chetni (int[] numbers)
+
+    static void checkIfEven(int[] numbers)
     {
-        System.out.println("chetni:");
+        System.out.println("Even:");
         for (int i = 0; i < numbers.length; i++)
         {
             if (numbers[i] % 2 == 0)
                 System.out.println(numbers[i]);
         }
+        System.out.println();
     }
-    static void nechetni (int[] numbers)
+
+    static void checkIfOdd(int[] numbers)
     {
-        System.out.println("nechetni:");
+        System.out.println("Odd:");
         for (int i = 0; i < numbers.length; i++)
         {
             if (numbers[i] % 2 != 0)
                 System.out.println(numbers[i]);
         }
+        System.out.println("");
     }
-    static void count5 (int[]numbers)
+
+    static void count5(int[]numbers)
     {
         int count = 0;
         for (int i = 0; i < numbers.length; i++)
         {if (numbers[i] == 5)
-                count++;}
+            count++;}
         System.out.println("5 count: " + count);
+        System.out.println("");
     }
-    static void initials (String name)
+
+    static void initials(String name)
     {
         char i = name.charAt(0);
         System.out.println("initial: " + i);
+        System.out.println("");
     }
-    static void charRemoval(String str1, String str2)
-    {
 
-    }
     static void minInt(int[] num)
     {
         int min = num[0];
@@ -100,15 +112,18 @@ public class Main {
                 min = num[i];
         }
         System.out.println("min: " + min);
+        System.out.println();
     }
-    static void chetnoNechetno(int number)
+
+    static void evenOrOdd(int number)
     {
         if (number % 2 == 0) System.out.println("true");
         else System.out.println("false");
+        System.out.println();
     }
+
     static void stringRemove(String str1, String str2)
     {
         System.out.println(str1.replace(str2, ""));
     }
-
 }
