@@ -1,7 +1,6 @@
 package org.example;
-public class Main{
-    public static void main(String[] args)
-    {
+public class Main {
+    public static void main(String[] args) {
         Dog dog = new Dog();                                       // creates instance of Dog
         System.out.println("Dog:");
         dog.eat();                                                 // prints methods
